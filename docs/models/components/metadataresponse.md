@@ -1,0 +1,11 @@
+# MetadataResponse
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `ID`                                                                 | *string*                                                             | :heavy_check_mark:                                                   | Image ID                                                             | abcdef1234567890                                                     |
+| `Metadata`                                                           | [components.ImageMetadata](../../models/components/imagemetadata.md) | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
+| `Urls`                                                               | [components.CdnUrls](../../models/components/cdnurls.md)             | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
+| `Links`                                                              | [components.HateoasLinks](../../models/components/hateoaslinks.md)   | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |

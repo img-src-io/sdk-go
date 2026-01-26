@@ -1,0 +1,10 @@
+# SearchResponse
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `Results`                                                            | [][components.SearchResult](../../models/components/searchresult.md) | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
+| `Total`                                                              | *int64*                                                              | :heavy_check_mark:                                                   | Total number of matches                                              | 5                                                                    |
+| `Query`                                                              | *string*                                                             | :heavy_check_mark:                                                   | Original search query                                                | vacation                                                             |
