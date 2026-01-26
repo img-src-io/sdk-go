@@ -1,0 +1,15 @@
+# ImageListItem
+
+
+## Fields
+
+| Field                                     | Type                                      | Required                                  | Description                               | Example                                   |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| `ID`                                      | *string*                                  | :heavy_check_mark:                        | Image ID                                  | abcdef1234567890                          |
+| `OriginalFilename`                        | *string*                                  | :heavy_check_mark:                        | Original filename as uploaded             | my-photo.jpg                              |
+| `SanitizedFilename`                       | **string*                                 | :heavy_minus_sign:                        | Sanitized filename (URL-safe)             | my-photo.jpg                              |
+| `Size`                                    | *int64*                                   | :heavy_check_mark:                        | File size in bytes                        | 1024000                                   |
+| `UploadedAt`                              | [time.Time](https://pkg.go.dev/time#Time) | :heavy_check_mark:                        | Upload timestamp                          | 2025-01-21T12:00:00Z                      |
+| `URL`                                     | *string*                                  | :heavy_check_mark:                        | API endpoint URL                          | /api/v1/images/abcdef1234567890           |
+| `CdnURL`                                  | **string*                                 | :heavy_minus_sign:                        | CDN URL for direct access                 | https://cdn.img-src.io/john/photo.webp    |
+| `Paths`                                   | []*string*                                | :heavy_check_mark:                        | All paths for this image                  | [<br/>"photo.webp",<br/>"blog/photo.webp"<br/>] |
