@@ -1,0 +1,14 @@
+# Preset
+
+
+## Fields
+
+| Field                                                    | Type                                                     | Required                                                 | Description                                              | Example                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `ID`                                                     | *string*                                                 | :heavy_check_mark:                                       | Preset ID                                                | preset_abc123                                            |
+| `Name`                                                   | *string*                                                 | :heavy_check_mark:                                       | Preset name                                              | thumbnail                                                |
+| `Description`                                            | *string*                                                 | :heavy_check_mark:                                       | Optional description                                     | 200x200 thumbnail with cover fit                         |
+| `Params`                                                 | map[string]*any*                                         | :heavy_check_mark:                                       | Transformation parameters                                | {<br/>"w": 200,<br/>"h": 200,<br/>"fit": "cover",<br/>"format": "webp"<br/>} |
+| `CreatedAt`                                              | *int64*                                                  | :heavy_check_mark:                                       | Creation timestamp (Unix epoch)                          | 1704067200                                               |
+| `UpdatedAt`                                              | *int64*                                                  | :heavy_check_mark:                                       | Last update timestamp (Unix epoch)                       | 1704067200                                               |
+| `UsageCount`                                             | *int64*                                                  | :heavy_check_mark:                                       | Number of times this preset has been used                | 42                                                       |
