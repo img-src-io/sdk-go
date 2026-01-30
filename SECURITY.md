@@ -19,6 +19,6 @@ We will acknowledge receipt within 48 hours and provide a detailed response with
 When using this SDK:
 
 1. **Never hardcode API keys** - Use environment variables
-2. **Keep dependencies updated** - Run `go get -u` regularly
+2. **Keep dependencies updated** - Run security audits regularly
 3. **Use HTTPS only** - The SDK enforces HTTPS by default
 4. **Validate user input** - Before passing to SDK methods
