@@ -25,7 +25,8 @@ type UploadResponse struct {
 	Dimensions       *ImageDimensions `json:"dimensions,omitzero"`
 	AvailableFormats AvailableFormats `json:"available_formats"`
 	// Upload timestamp (RFC3339 format)
-	UploadedAt time.Time    `json:"uploaded_at"`
+	UploadedAt time.Time  `json:"uploaded_at"`
+	Visibility Visibility `json:"visibility"`
 	Links      HateoasLinks `json:"_links"`
 }
 
@@ -108,6 +109,13 @@ func (u *UploadResponse) GetUploadedAt() time.Time {
 		return time.Time{}
 	}
 	return u.UploadedAt
+}
+
+func (u *UploadResponse) GetVisibility() Visibility {
+	if u == nil {
+		return Visibility("")
+	}
+	return u.Visibility
 }
 
 func (u *UploadResponse) GetLinks() HateoasLinks {

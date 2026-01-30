@@ -23,7 +23,9 @@ type ImageListItem struct {
 	// CDN URL for direct access
 	CdnURL *string `json:"cdn_url,omitzero"`
 	// All paths for this image
-	Paths []string `json:"paths"`
+	Paths      []string         `json:"paths"`
+	Visibility Visibility       `json:"visibility"`
+	ActiveSignedUrl *ActiveSignedUrl `json:"active_signed_url,omitzero"`
 }
 
 func (i ImageListItem) MarshalJSON() ([]byte, error) {
@@ -91,4 +93,18 @@ func (i *ImageListItem) GetPaths() []string {
 		return []string{}
 	}
 	return i.Paths
+}
+
+func (i *ImageListItem) GetVisibility() Visibility {
+	if i == nil {
+		return Visibility("")
+	}
+	return i.Visibility
+}
+
+func (i *ImageListItem) GetActiveSignedUrl() *ActiveSignedUrl {
+	if i == nil {
+		return nil
+	}
+	return i.ActiveSignedUrl
 }

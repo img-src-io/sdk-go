@@ -23,7 +23,8 @@ type SearchResult struct {
 	// API endpoint URL
 	URL string `json:"url"`
 	// CDN URL
-	CdnURL *string `json:"cdn_url,omitzero"`
+	CdnURL     *string    `json:"cdn_url,omitzero"`
+	Visibility Visibility `json:"visibility"`
 }
 
 func (s SearchResult) MarshalJSON() ([]byte, error) {
@@ -91,4 +92,11 @@ func (s *SearchResult) GetCdnURL() *string {
 		return nil
 	}
 	return s.CdnURL
+}
+
+func (s *SearchResult) GetVisibility() Visibility {
+	if s == nil {
+		return Visibility("")
+	}
+	return s.Visibility
 }
