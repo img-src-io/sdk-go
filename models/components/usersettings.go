@@ -9,6 +9,8 @@ type UserSettings struct {
 	Username string `json:"username"`
 	// Email address
 	Email *string `json:"email,omitzero"`
+	// User's plan ID
+	Plan string `json:"plan"`
 	// Preferred delivery formats (ordered)
 	DeliveryFormats []string `json:"delivery_formats"`
 	// Default image quality (1-100)
@@ -52,6 +54,13 @@ func (u *UserSettings) GetEmail() *string {
 		return nil
 	}
 	return u.Email
+}
+
+func (u *UserSettings) GetPlan() string {
+	if u == nil {
+		return ""
+	}
+	return u.Plan
 }
 
 func (u *UserSettings) GetDeliveryFormats() []string {

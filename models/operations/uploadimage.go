@@ -32,6 +32,8 @@ type UploadImageRequestBody struct {
 	File *File `multipartForm:"file,name=file"`
 	// Target path for organizing the image
 	TargetPath *string `multipartForm:"name=target_path"`
+	// Image visibility (public or private)
+	Visibility *components.Visibility `multipartForm:"name=visibility"`
 }
 
 func (u UploadImageRequestBody) MarshalJSON() ([]byte, error) {
@@ -57,6 +59,13 @@ func (u *UploadImageRequestBody) GetTargetPath() *string {
 		return nil
 	}
 	return u.TargetPath
+}
+
+func (u *UploadImageRequestBody) GetVisibility() *components.Visibility {
+	if u == nil {
+		return nil
+	}
+	return u.Visibility
 }
 
 type UploadImageResponse struct {

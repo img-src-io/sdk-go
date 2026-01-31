@@ -45,6 +45,7 @@ type UsageResponse struct {
 	// Total storage used in GB
 	StorageUsedGb float64       `json:"storage_used_gb"`
 	CurrentPeriod CurrentPeriod `json:"current_period"`
+	Credits       Credits       `json:"credits"`
 }
 
 func (u *UsageResponse) GetPlan() string {
@@ -115,4 +116,11 @@ func (u *UsageResponse) GetCurrentPeriod() CurrentPeriod {
 		return CurrentPeriod{}
 	}
 	return u.CurrentPeriod
+}
+
+func (u *UsageResponse) GetCredits() Credits {
+	if u == nil {
+		return Credits{}
+	}
+	return u.Credits
 }

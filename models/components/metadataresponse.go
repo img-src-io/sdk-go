@@ -4,10 +4,11 @@ package components
 
 type MetadataResponse struct {
 	// Image ID
-	ID       string        `json:"id"`
-	Metadata ImageMetadata `json:"metadata"`
-	Urls     CdnUrls       `json:"urls"`
-	Links    HateoasLinks  `json:"_links"`
+	ID         string        `json:"id"`
+	Metadata   ImageMetadata `json:"metadata"`
+	Urls       CdnUrls       `json:"urls"`
+	Visibility Visibility    `json:"visibility"`
+	Links      HateoasLinks  `json:"_links"`
 }
 
 func (m *MetadataResponse) GetID() string {
@@ -29,6 +30,13 @@ func (m *MetadataResponse) GetUrls() CdnUrls {
 		return CdnUrls{}
 	}
 	return m.Urls
+}
+
+func (m *MetadataResponse) GetVisibility() Visibility {
+	if m == nil {
+		return Visibility("")
+	}
+	return m.Visibility
 }
 
 func (m *MetadataResponse) GetLinks() HateoasLinks {
