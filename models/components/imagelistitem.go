@@ -23,8 +23,8 @@ type ImageListItem struct {
 	// CDN URL for direct access
 	CdnURL *string `json:"cdn_url,omitzero"`
 	// All paths for this image
-	Paths      []string         `json:"paths"`
-	Visibility Visibility       `json:"visibility"`
+	Paths           []string         `json:"paths"`
+	Visibility      Visibility       `json:"visibility"`
 	ActiveSignedUrl *ActiveSignedUrl `json:"active_signed_url,omitzero"`
 }
 

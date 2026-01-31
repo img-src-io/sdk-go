@@ -8,8 +8,8 @@ import (
 )
 
 type UpdateVisibilityRequest struct {
-	ID   string                                `pathParam:"style=simple,explode=false,name=id"`
-	Body components.UpdateVisibilityRequest    `request:"mediaType=application/json"`
+	ID   string                             `pathParam:"style=simple,explode=false,name=id"`
+	Body components.UpdateVisibilityRequest `request:"mediaType=application/json"`
 }
 
 func (u UpdateVisibilityRequest) MarshalJSON() ([]byte, error) {
@@ -38,7 +38,7 @@ func (u *UpdateVisibilityRequest) GetBody() components.UpdateVisibilityRequest {
 }
 
 type UpdateVisibilityResponse struct {
-	HTTPMeta                 components.HTTPMetadata `json:"-"`
+	HTTPMeta components.HTTPMetadata `json:"-"`
 	// Visibility updated successfully
 	UpdateVisibilityResponse *components.UpdateVisibilityResponse
 }
