@@ -46,10 +46,10 @@ retry/                 → Retry configuration (BackoffStrategy)
 ### SDK initialization pattern
 
 ```go
-s := sdkgo.New(
-    sdkgo.WithSecurity("imgsrc_..."),
-    sdkgo.WithServerURL("https://api.img-src.io"),
-    sdkgo.WithTimeout(30 * time.Second),
+s := imgsrc.New(
+    imgsrc.WithSecurity("imgsrc_..."),
+    imgsrc.WithServerURL("https://api.img-src.io"),
+    imgsrc.WithTimeout(30 * time.Second),
 )
 // Access resources: s.Images, s.Settings, s.Presets, s.Usage
 ```
@@ -59,7 +59,7 @@ s := sdkgo.New(
 - **Options pattern**: `SDKOption` functions on `New()`, per-operation `Option` functions (e.g., `WithRetries`, `WithOperationTimeout`)
 - **Pagination**: Response objects have a `Next()` method; loop until `res == nil`
 - **Error handling**: Operations return `(response, error)`. Use `errors.As(err, &e)` with `*apierrors.ErrorResponse` or `*apierrors.APIError`
-- **Pointer helpers**: Use `sdkgo.Pointer[T](v)` or type-specific helpers (`sdkgo.String()`, `sdkgo.Int64()`) for optional parameters
+- **Pointer helpers**: Use `imgsrc.Pointer[T](v)` or type-specific helpers (`imgsrc.String()`, `imgsrc.Int64()`) for optional parameters
 - **OptionalNullable**: `optionalnullable.From(v)` for set, nil map for unset, `map[bool]*T{false: nil}` for explicit null
 - **Custom JSON**: All models implement `MarshalJSON`/`UnmarshalJSON` via `internal/utils/json.go`. Struct tags: `json:`, `queryParam:`, `pathParam:`, `header:`, `default:`
 - **Hooks**: Register custom lifecycle hooks in `internal/hooks/registration.go` (the only non-generated hooks file). Four events: SDKInit, BeforeRequest, AfterSuccess, AfterError

@@ -18,15 +18,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Usage.Get(ctx)

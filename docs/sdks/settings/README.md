@@ -19,15 +19,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Settings.Get(ctx)
@@ -71,7 +71,7 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/optionalnullable"
 	"github.com/img-src-io/sdk-go/models/components"
 	"log"
@@ -80,8 +80,8 @@ import(
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Settings.Update(ctx, &components.UpdateSettingsRequest{
@@ -90,12 +90,12 @@ func main() {
             "avif",
             "jpeg",
         },
-        DefaultQuality: sdkgo.Pointer[int64](80),
-        DefaultFitMode: sdkgo.Pointer("contain"),
-        DefaultMaxWidth: optionalnullable.From(sdkgo.Pointer[int64](1920)),
-        DefaultMaxHeight: optionalnullable.From(sdkgo.Pointer[int64](1080)),
-        Theme: sdkgo.Pointer("dark"),
-        Language: sdkgo.Pointer("ko"),
+        DefaultQuality: imgsrc.Pointer[int64](80),
+        DefaultFitMode: imgsrc.Pointer("contain"),
+        DefaultMaxWidth: optionalnullable.From(imgsrc.Pointer[int64](1920)),
+        DefaultMaxHeight: optionalnullable.From(imgsrc.Pointer[int64](1080)),
+        Theme: imgsrc.Pointer("dark"),
+        Language: imgsrc.Pointer("ko"),
     })
     if err != nil {
         log.Fatal(err)

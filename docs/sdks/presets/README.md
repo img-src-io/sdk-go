@@ -22,15 +22,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Presets.ListPresets(ctx)
@@ -74,7 +74,7 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/models/components"
 	"log"
 )
@@ -82,13 +82,13 @@ import(
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Presets.CreatePreset(ctx, &components.CreatePresetRequest{
         Name: "thumbnail",
-        Description: sdkgo.Pointer("200x200 thumbnail with cover fit"),
+        Description: imgsrc.Pointer("200x200 thumbnail with cover fit"),
         Params: map[string]any{
             "w": 200,
             "h": 200,
@@ -137,15 +137,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Presets.GetPreset(ctx, "preset_abc123")
@@ -190,7 +190,7 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/optionalnullable"
 	"github.com/img-src-io/sdk-go/models/components"
 	"log"
@@ -199,13 +199,13 @@ import(
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Presets.UpdatePreset(ctx, "preset_abc123", &components.UpdatePresetRequest{
-        Name: sdkgo.Pointer("card-image"),
-        Description: optionalnullable.From(sdkgo.Pointer("Card thumbnail for product listings")),
+        Name: imgsrc.Pointer("card-image"),
+        Description: optionalnullable.From(imgsrc.Pointer("Card thumbnail for product listings")),
         Params: map[string]any{
             "w": 400,
             "h": 300,
@@ -254,15 +254,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Presets.DeletePreset(ctx, "preset_abc123")

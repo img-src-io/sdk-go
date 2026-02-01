@@ -24,7 +24,7 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/models/operations"
 	"log"
 )
@@ -32,12 +32,12 @@ import(
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Images.Upload(ctx, &operations.UploadImageRequestBody{
-        TargetPath: sdkgo.Pointer("blog/2024"),
+        TargetPath: imgsrc.Pointer("blog/2024"),
     })
     if err != nil {
         log.Fatal(err)
@@ -80,18 +80,18 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
-    res, err := s.Images.List(ctx, sdkgo.Pointer[int64](50), sdkgo.Pointer[int64](0), sdkgo.Pointer("blog/2024"))
+    res, err := s.Images.List(ctx, imgsrc.Pointer[int64](50), imgsrc.Pointer[int64](0), imgsrc.Pointer("blog/2024"))
     if err != nil {
         log.Fatal(err)
     }
@@ -147,18 +147,18 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
-    res, err := s.Images.Search(ctx, "vacation", sdkgo.Pointer[int64](20))
+    res, err := s.Images.Search(ctx, "vacation", imgsrc.Pointer[int64](20))
     if err != nil {
         log.Fatal(err)
     }
@@ -201,15 +201,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Images.GetMetadata(ctx, "<id>")
@@ -254,15 +254,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Images.Delete(ctx, "abcdef1234567890")
@@ -307,7 +307,7 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/models/components"
 	"log"
 )
@@ -315,8 +315,8 @@ import(
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Images.CreateSignedURL(ctx, "abcdef1234567890", &components.CreateSignedURLRequest{})
@@ -362,15 +362,15 @@ package main
 
 import(
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
 
-    s := sdkgo.New(
-        sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+    s := imgsrc.New(
+        imgsrc.WithSecurity("imgsrc_your_api_key_here"),
     )
 
     res, err := s.Images.DeletePath(ctx, "johndoe", "blog/2024/photo.webp")
