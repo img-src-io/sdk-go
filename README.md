@@ -2,7 +2,11 @@
 
 Developer-friendly & type-safe Go SDK specifically catered to leverage *img-src* API.
 
-[![License: MIT](https://img.shields.io/badge/LICENSE_//_MIT-3b5bdb?style=for-the-badge&labelColor=eff6ff)](https://opensource.org/licenses/MIT)
+[![Go Reference](https://pkg.go.dev/badge/github.com/img-src-io/sdk-go.svg)](https://pkg.go.dev/github.com/img-src-io/sdk-go)
+[![CI](https://github.com/img-src-io/sdk-go/actions/workflows/ci.yml/badge.svg)](https://github.com/img-src-io/sdk-go/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/img-src-io/sdk-go)](https://goreportcard.com/report/github.com/img-src-io/sdk-go)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/img-src-io/sdk-go)](https://github.com/img-src-io/sdk-go)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <br /><br />
 
