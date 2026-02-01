@@ -78,15 +78,15 @@ package main
 
 import (
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+	s := imgsrc.New(
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
 	res, err := s.Settings.Get(ctx)
@@ -118,15 +118,15 @@ package main
 
 import (
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+	s := imgsrc.New(
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
 	res, err := s.Settings.Get(ctx)
@@ -190,18 +190,18 @@ package main
 
 import (
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+	s := imgsrc.New(
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
-	res, err := s.Images.List(ctx, sdkgo.Pointer[int64](50), sdkgo.Pointer[int64](0), sdkgo.Pointer("blog/2024"))
+	res, err := s.Images.List(ctx, imgsrc.Pointer[int64](50), imgsrc.Pointer[int64](0), imgsrc.Pointer("blog/2024"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -236,7 +236,7 @@ package main
 
 import (
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/retry"
 	"log"
 	"models/operations"
@@ -245,8 +245,8 @@ import (
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+	s := imgsrc.New(
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
 	res, err := s.Settings.Get(ctx, operations.WithRetries(
@@ -276,7 +276,7 @@ package main
 
 import (
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/retry"
 	"log"
 )
@@ -284,8 +284,8 @@ import (
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithRetryConfig(
+	s := imgsrc.New(
+		imgsrc.WithRetryConfig(
 			retry.Config{
 				Strategy: "backoff",
 				Backoff: &retry.BackoffStrategy{
@@ -296,7 +296,7 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
 	res, err := s.Settings.Get(ctx)
@@ -334,7 +334,7 @@ package main
 import (
 	"context"
 	"errors"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"github.com/img-src-io/sdk-go/models/apierrors"
 	"log"
 )
@@ -342,8 +342,8 @@ import (
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+	s := imgsrc.New(
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
 	res, err := s.Settings.Get(ctx)
@@ -383,16 +383,16 @@ package main
 
 import (
 	"context"
-	sdkgo "github.com/img-src-io/sdk-go"
+	imgsrc "github.com/img-src-io/sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := sdkgo.New(
-		sdkgo.WithServerURL("https://api.img-src.io"),
-		sdkgo.WithSecurity("imgsrc_your_api_key_here"),
+	s := imgsrc.New(
+		imgsrc.WithServerURL("https://api.img-src.io"),
+		imgsrc.WithSecurity("imgsrc_your_api_key_here"),
 	)
 
 	res, err := s.Settings.Get(ctx)
@@ -430,7 +430,7 @@ import (
 
 var (
 	httpClient = &http.Client{Timeout: 30 * time.Second}
-	sdkClient  = sdkgo.New(sdkgo.WithClient(httpClient))
+	sdkClient  = imgsrc.New(imgsrc.WithClient(httpClient))
 )
 ```
 
