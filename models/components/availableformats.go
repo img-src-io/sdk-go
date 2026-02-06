@@ -9,6 +9,10 @@ type AvailableFormats struct {
 	Avif string `json:"avif"`
 	// JPEG format URL
 	Jpeg string `json:"jpeg"`
+	// PNG format URL
+	Png string `json:"png"`
+	// JXL format URL
+	Jxl string `json:"jxl"`
 }
 
 func (a *AvailableFormats) GetWebp() string {
@@ -30,4 +34,18 @@ func (a *AvailableFormats) GetJpeg() string {
 		return ""
 	}
 	return a.Jpeg
+}
+
+func (a *AvailableFormats) GetPng() string {
+	if a == nil {
+		return ""
+	}
+	return a.Png
+}
+
+func (a *AvailableFormats) GetJxl() string {
+	if a == nil {
+		return ""
+	}
+	return a.Jxl
 }

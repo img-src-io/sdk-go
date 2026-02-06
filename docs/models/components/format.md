@@ -9,3 +9,4 @@
 | `FormatAvif` | avif         |
 | `FormatJpeg` | jpeg         |
 | `FormatPng`  | png          |
+| `FormatJxl`  | jxl          |

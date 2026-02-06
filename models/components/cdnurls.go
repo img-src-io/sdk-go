@@ -13,6 +13,8 @@ type CdnUrls struct {
 	Jpeg string `json:"jpeg"`
 	// PNG format URL
 	Png string `json:"png"`
+	// JXL format URL
+	Jxl string `json:"jxl"`
 }
 
 func (c *CdnUrls) GetOriginal() string {
@@ -48,4 +50,11 @@ func (c *CdnUrls) GetPng() string {
 		return ""
 	}
 	return c.Png
+}
+
+func (c *CdnUrls) GetJxl() string {
+	if c == nil {
+		return ""
+	}
+	return c.Jxl
 }

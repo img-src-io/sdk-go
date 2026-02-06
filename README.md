@@ -21,7 +21,7 @@ A serverless image processing and delivery API built on Cloudflare Workers with 
 
 - **Image Upload**: Store original images in R2 with SHA256-based deduplication
 - **On-Demand Transformation**: Resize, crop, and convert images via URL parameters
-- **Format Conversion**: WebP, AVIF, JPEG, PNG output formats
+- **Format Conversion**: WebP, AVIF, JPEG, PNG, JXL output formats
 - **Path Organization**: Organize images into folders with multiple paths per image
 - **CDN Caching**: Automatic edge caching for transformed images
 

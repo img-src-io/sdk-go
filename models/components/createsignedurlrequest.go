@@ -47,6 +47,7 @@ const (
 	FormatAvif Format = "avif"
 	FormatJpeg Format = "jpeg"
 	FormatPng  Format = "png"
+	FormatJxl  Format = "jxl"
 )
 
 func (e Format) ToPointer() *Format {
@@ -65,6 +66,8 @@ func (e *Format) UnmarshalJSON(data []byte) error {
 	case "jpeg":
 		fallthrough
 	case "png":
+		fallthrough
+	case "jxl":
 		*e = Format(v)
 		return nil
 	default:

@@ -8,7 +8,7 @@
 | `ID`                                    | *string*                                | :heavy_check_mark:                      | Clerk user ID                           | user_abc123                             |
 | `Username`                              | *string*                                | :heavy_check_mark:                      | Username                                | johndoe                                 |
 | `Email`                                 | **string*                               | :heavy_minus_sign:                      | Email address                           | john@example.com                        |
-| `DeliveryFormats`                       | []*string*                              | :heavy_check_mark:                      | Preferred delivery formats (ordered)    | [<br/>"webp",<br/>"avif",<br/>"jpeg"<br/>] |
+| `DeliveryFormats`                       | []*string*                              | :heavy_check_mark:                      | Preferred delivery formats (ordered)    | [<br/>"webp",<br/>"avif",<br/>"jpeg",<br/>"jxl"<br/>] |
 | `DefaultQuality`                        | *int64*                                 | :heavy_check_mark:                      | Default image quality (1-100)           | 80                                      |
 | `DefaultFitMode`                        | *string*                                | :heavy_check_mark:                      | Default fit mode                        | contain                                 |
 | `DefaultMaxWidth`                       | **int64*                                | :heavy_minus_sign:                      | Default maximum width                   | 1920                                    |
