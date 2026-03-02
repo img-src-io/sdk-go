@@ -3,7 +3,7 @@ module github.com/img-src-io/sdk-go
 go 1.22
 
 require (
-	github.com/spyzhov/ajson v0.8.0
+	github.com/spyzhov/ajson v0.9.6
 	github.com/stretchr/testify v1.11.1
 )
 
