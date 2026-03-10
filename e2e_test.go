@@ -270,8 +270,12 @@ func TestE2EIntegration(t *testing.T) {
 		t.Logf("Created preset: ID=%s, Name=%s", presetID, createRes.Preset.Name)
 		assert.Equal(t, presetName, createRes.Preset.Name)
 
+		currentPresetName := presetName
 		defer func() {
-			_, delErr := s.Presets.DeletePreset(ctx, presetID)
+			if currentPresetName == "" {
+				return
+			}
+			_, delErr := s.Presets.DeletePreset(ctx, currentPresetName)
 			if delErr != nil {
 				t.Logf("Cleanup warning: failed to delete preset: %v", delErr)
 			}
@@ -297,13 +301,15 @@ func TestE2EIntegration(t *testing.T) {
 		require.NoError(t, err)
 		require.NotNil(t, updateRes.Preset)
 		assert.Equal(t, updatedName, updateRes.Preset.Name)
+		currentPresetName = updatedName
 		t.Logf("Updated preset name to: %s", updateRes.Preset.Name)
 
-		// Delete preset
-		delRes, err := s.Presets.DeletePreset(ctx, presetID)
+		// Delete preset (API uses name, not UUID)
+		delRes, err := s.Presets.DeletePreset(ctx, updatedName)
 		require.NoError(t, err)
 		require.NotNil(t, delRes.DeletePresetResponse)
-		t.Logf("Deleted preset: %s", presetID)
+		currentPresetName = "" // prevent defer cleanup
+		t.Logf("Deleted preset: %s", updatedName)
 	})
 
 	// ---- 10. DeleteImage ----
