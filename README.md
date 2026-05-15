@@ -447,7 +447,5 @@ looking for the latest version.
 
 ## Contributions
 
-While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
-We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release.
+We value open-source contributions to this SDK. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release.
 
-<!-- Placeholder for Future Speakeasy SDK Sections -->

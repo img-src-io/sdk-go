@@ -2,11 +2,6 @@
 
 Thank you for your interest in contributing!
 
-## Note on Auto-Generated Code
-
-This SDK is **auto-generated** from our OpenAPI specification using [Speakeasy](https://speakeasy.com).
-Direct code changes may be overwritten during regeneration.
-
 ## How to Contribute
 
 ### Bug Reports
